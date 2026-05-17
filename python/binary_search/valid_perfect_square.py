@@ -1,0 +1,2 @@
+def isPerfectSquare(num):
+    pass
