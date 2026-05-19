@@ -1,15 +1,10 @@
 def isPerfectSquare(num):
     left, right = 1, num
 
-    while left <= right:
-        mid = left + ((right - 1) // 2)
-
-        if mid * mid > num:
-            right = mid - 1
-        elif mid * mid < num:
-            left = mid + 1
-        else:
+    for i in range(1, num + 1):
+        if i * i == num:
             return True
-    return False
+        if i * i < num:
+            return False
 
 print(isPerfectSquare(14))
