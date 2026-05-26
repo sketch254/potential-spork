@@ -1,0 +1,3 @@
+def getIndex(iter):
+    pass
+
