@@ -1,4 +1,9 @@
 def maxResourceAllocation(candies, target):
-    pass
+    n = len(candies)
+
+    if sum(candies) < target:
+        return 0
 
     
+
+print(maxResourceAllocation([5, 8, 6], 3))
