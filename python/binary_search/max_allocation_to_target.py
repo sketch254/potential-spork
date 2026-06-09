@@ -3,16 +3,24 @@ def maxResourceAllocation(candies, target):
     if sum(candies) < target:
         return 0
 
-    def can_allocate(num):
-        x = sum(piles// num for piles in candies) 
-        return x >= target
+    # def can_allocate(num):
+    #     x = sum(piles// num for piles in candies) 
+    #     return x >= target
 
-    low, high = 0, max(candies)
+    low, high = 1, sum(candies)//target
     res = 0
 
     while low < high:
         mid = (low + high) // 2
-        if can_allocate(mid):
+        count = 0
+
+        for i in candies:
+            if i >= mid:
+                count += i // mid
+            if count >= target:
+                break
+            
+        if count >= target:
             res = mid
             low = mid + 1
 
@@ -23,4 +31,4 @@ def maxResourceAllocation(candies, target):
 
     
 
-print(maxResourceAllocation([6, 6, 6], 3))
+print(maxResourceAllocation([5, 6, 8], 3))
