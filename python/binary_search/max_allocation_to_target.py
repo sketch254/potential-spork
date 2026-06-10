@@ -17,6 +17,7 @@ def maxResourceAllocation(candies, target):
         for i in candies:
             if i >= mid:
                 count += i // mid
+
             if count >= target:
                 break
             
@@ -31,4 +32,4 @@ def maxResourceAllocation(candies, target):
 
     
 
-print(maxResourceAllocation([5, 6, 8], 3))
+print(maxResourceAllocation([5, 6, 8], 4))
