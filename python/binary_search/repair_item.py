@@ -1,4 +1,6 @@
 def repair_cars(ranks, cars):
-    pass
+    # base case scenario
+    if len(ranks) <= 0:
+        return
 
-    
+ranks = []
