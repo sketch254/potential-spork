@@ -1,3 +1,5 @@
+import math
+
 def repair_cars(ranks, cars):
     # base case scenario
     if len(ranks) <= 0:
@@ -5,6 +7,8 @@ def repair_cars(ranks, cars):
 
     def repaired(time):
         count = 0
+        for r in ranks:
+            count += int(math.sqrt(time // r))
         return count
 
     low, high = 1, ranks[0] * cars * cars
@@ -23,5 +27,4 @@ def repair_cars(ranks, cars):
     return res
 
 
-print(repair_cars([4,3,2,1], 10))
 print(repair_cars([], 10))
